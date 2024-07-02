@@ -1,0 +1,11 @@
+services:
+  hot_redis:
+    image: byor-dev:debian
+    build: .
+    init: true
+    volumes:
+      - type: bind
+        source: "./DockerVolume"
+        target: "/root/byor"
+    ports:
+      - "8002:8002"
